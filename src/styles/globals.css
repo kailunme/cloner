@@ -68,6 +68,10 @@
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
 
+html {
+  overflow-x: hidden;
+}
+
 body.ua-body {
   background-color: var(--ua-body-bg);
   background-image:
@@ -76,7 +80,8 @@ body.ua-body {
   color: var(--ua-text-primary);
   font-family: var(--font-aldrich);
   min-height: 100vh;
-  overflow-x: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 a { color: var(--ua-link); text-decoration: none; }
@@ -115,6 +120,8 @@ a:hover { color: var(--ua-link-hover); }
 @media (max-width: 700px) {
   .site-grid {
     grid-template-columns: 1fr;
+    padding: 12px 12px 48px;
+    gap: 12px;
   }
   .col-left  { grid-column: 1; grid-row: 1; }
   .col-mid   { grid-column: 1; grid-row: 2; }
