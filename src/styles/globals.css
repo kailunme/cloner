@@ -111,9 +111,8 @@ a:hover { color: var(--ua-link-hover); }
     grid-row: 2;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
   }
-  .col-right .ua-panel + .ua-panel { margin-top: 0; }
 }
 
 /* mobile: single column, show everything stacked */
