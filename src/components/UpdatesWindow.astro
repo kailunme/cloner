@@ -1,0 +1,47 @@
+---
+const updates = [
+  { date: '2026-07-08', text: 'launched new personal site on Astro' },
+  { date: '2026-06-30', text: 'published ascii-forge v2.0 on crates.io' },
+  { date: '2026-06-15', text: 'added WebGL renderer to neural-canvas' },
+  { date: '2026-05-20', text: 'moved hosting to Cloudflare Pages' },
+];
+---
+
+<style>
+  .update-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(180,205,235,0.3);
+  }
+  .update-row:last-child { border-bottom: none; }
+  .update-date {
+    font-family: var(--font-source-code-pro);
+    font-size: 10px;
+    color: var(--ua-text-muted-light);
+    letter-spacing: 1px;
+  }
+  .update-text {
+    font-family: var(--font-aldrich);
+    font-size: 12px;
+    color: var(--ua-text-muted);
+    line-height: 1.4;
+  }
+</style>
+
+<div class="ua-panel">
+  <div class="ua-toolbar">
+    <img src="/images/xbutton.png" alt="" class="ua-xbtn" />
+    <span class="ua-toolbar-title">UPDATES</span>
+  </div>
+
+  <div style="padding: 12px 14px;">
+    {updates.map(u => (
+      <div class="update-row">
+        <span class="update-date">{u.date}</span>
+        <span class="update-text">{u.text}</span>
+      </div>
+    ))}
+  </div>
+</div>

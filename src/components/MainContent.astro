@@ -1,0 +1,305 @@
+---
+const projects = [
+  {
+    name: 'neural-canvas',
+    desc: 'Generative art using WebGL + diffusion models',
+    tags: ['WebGL', 'TypeScript', 'AI'],
+    href: '#',
+    star: '42',
+  },
+  {
+    name: 'pixelstream',
+    desc: 'Real-time pixel art collaboration tool',
+    tags: ['WebSocket', 'React', 'Canvas'],
+    href: '#',
+    star: '18',
+  },
+  {
+    name: 'ascii-forge',
+    desc: 'CLI for converting images to ASCII art',
+    tags: ['Rust', 'CLI'],
+    href: '#',
+    star: '91',
+  },
+];
+
+const skills = [
+  { name: 'TypeScript', level: 90 },
+  { name: 'Rust',       level: 70 },
+  { name: 'WebGL / GLSL', level: 60 },
+  { name: 'Systems Design', level: 75 },
+];
+---
+
+<style>
+  .mc-panel {
+    background: var(--ua-panel-bg);
+    border: 1px solid var(--ua-panel-border);
+    border-radius: var(--ua-panel-radius);
+    box-shadow: var(--ua-panel-shadow);
+    overflow: hidden;
+  }
+
+  .mc-panel + .mc-panel { margin-top: 18px; }
+
+  .mc-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 16px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--ua-toolbar-bg) 100%);
+    border-bottom: 1px solid var(--ua-panel-border);
+  }
+
+  .mc-toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mc-title {
+    font-family: var(--font-space-age);
+    font-size: 20px;
+    background: var(--ua-gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+  }
+
+  .mc-toolbar-title {
+    font-family: var(--font-sf-telegraphic);
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--ua-toolbar-text);
+    text-transform: uppercase;
+  }
+
+  .mc-xbtn {
+    width: 18px;
+    height: 18px;
+    opacity: 0.55;
+  }
+
+  .mc-body {
+    padding: 18px 20px 20px;
+  }
+
+  .mc-lead {
+    font-family: var(--font-aldrich);
+    font-size: 13.5px;
+    color: var(--ua-text-muted);
+    line-height: 1.75;
+  }
+
+  .mc-highlight {
+    color: #5a9fd8;
+  }
+
+  .mc-sep {
+    display: block;
+    height: 1px;
+    background: var(--ua-separator);
+    margin: 14px 0;
+  }
+
+  .mc-h2 {
+    font-family: var(--font-aldrich);
+    font-size: 11px;
+    color: var(--ua-text-muted-light);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .project-card {
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(180,205,235,0.5);
+    background: rgba(255,255,255,0.55);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover {
+    border-color: rgba(100,160,220,0.5);
+    box-shadow: 0 4px 16px rgba(80,140,200,0.1);
+  }
+  .project-card + .project-card { margin-top: 8px; }
+
+  .project-name {
+    font-family: var(--font-source-code-pro);
+    font-size: 13px;
+    color: #4a8fd4;
+    font-weight: 600;
+  }
+  .project-desc {
+    font-family: var(--font-aldrich);
+    font-size: 12px;
+    color: var(--ua-text-muted);
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .project-star {
+    font-family: var(--font-source-code-pro);
+    font-size: 11px;
+    color: var(--ua-text-muted-light);
+    margin-left: auto;
+  }
+
+  .ua-tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 20px;
+    border: 1px solid rgba(100,160,220,0.3);
+    background: rgba(160,200,245,0.1);
+    color: #6a9fd8;
+    font-family: var(--font-aldrich);
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .skill-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+  .skill-name {
+    font-family: var(--font-aldrich);
+    font-size: 12px;
+    color: var(--ua-text-muted);
+    width: 120px;
+    flex-shrink: 0;
+  }
+  .skill-track {
+    flex: 1;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(180,210,240,0.3);
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #6aabf0, #a8d4ff);
+  }
+  .skill-pct {
+    font-family: var(--font-source-code-pro);
+    font-size: 10px;
+    color: var(--ua-text-muted-light);
+    width: 32px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .blink-notice {
+    animation: blinker 1.5s infinite;
+    font-size: 11px;
+    color: #74a4db;
+    font-family: var(--font-aldrich);
+    letter-spacing: 1px;
+  }
+
+  .fact-bar {
+    padding: 7px 18px;
+    background: rgba(255,255,255,0.4);
+    border-top: 1px solid var(--ua-panel-border);
+    font-family: var(--font-forced-square);
+    font-size: 11px;
+    color: var(--ua-text-muted-light);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
+
+<!-- WELCOME PANEL -->
+<div class="mc-panel fade-up">
+  <div class="mc-toolbar">
+    <div class="mc-toolbar-left">
+      <img src="/images/xbutton.png" alt="" class="mc-xbtn" />
+      <span class="mc-title">welcome</span>
+    </div>
+    <span class="mc-toolbar-title">home</span>
+  </div>
+
+  <div class="mc-body">
+    <p class="mc-lead">
+      hey — I'm <span class="mc-highlight">Kai</span>, a software engineer obsessed with
+      the intersection of <span class="mc-highlight">systems programming</span>,
+      <span class="mc-highlight">generative art</span>, and the aesthetics of early internet culture.
+    </p>
+    <span class="mc-sep"></span>
+    <p class="mc-lead">
+      I build tools that make computers feel alive — from low-level network utilities to
+      browser-based creative environments. This is my digital space to share projects,
+      writing, and the things I'm collecting on the web.
+    </p>
+    <span class="mc-sep"></span>
+    <span class="blink-notice">
+      ✦ still under construction — thank you for your patience ✦
+    </span>
+  </div>
+
+  <div class="fact-bar">
+    ∷ in the realm of zeros and ones, I search for my soul ∷
+  </div>
+</div>
+
+<!-- PROJECTS PANEL -->
+<div class="mc-panel fade-up" style="animation-delay:0.08s;">
+  <div class="mc-toolbar">
+    <div class="mc-toolbar-left">
+      <img src="/images/xbutton.png" alt="" class="mc-xbtn" />
+      <span class="mc-title" style="font-size:17px;">projects</span>
+    </div>
+    <span class="mc-toolbar-title">recent work</span>
+  </div>
+
+  <div class="mc-body">
+    <p class="mc-h2">featured</p>
+    {projects.map(p => (
+      <div class="project-card">
+        <div style="display:flex;align-items:baseline;gap:8px;">
+          <a href={p.href} class="project-name">{p.name}</a>
+          <span class="project-star">★ {p.star}</span>
+        </div>
+        <p class="project-desc">{p.desc}</p>
+        <div class="project-meta">
+          {p.tags.map(t => <span class="ua-tag">{t}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<!-- SKILLS PANEL -->
+<div class="mc-panel fade-up" style="animation-delay:0.16s;">
+  <div class="mc-toolbar">
+    <div class="mc-toolbar-left">
+      <img src="/images/xbutton.png" alt="" class="mc-xbtn" />
+      <span class="mc-title" style="font-size:17px;">skills</span>
+    </div>
+    <span class="mc-toolbar-title">stack</span>
+  </div>
+
+  <div class="mc-body">
+    <p class="mc-h2">proficiency</p>
+    {skills.map(s => (
+      <div class="skill-row">
+        <span class="skill-name">{s.name}</span>
+        <div class="skill-track">
+          <div class="skill-fill" style={`width:${s.level}%`}></div>
+        </div>
+        <span class="skill-pct">{s.level}%</span>
+      </div>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,136 @@
+---
+const nowPlaying = { title: 'Habanera (Techno Edit)', artist: 'Yelle' };
+const stats = [
+  { label: 'Created', value: 'Jul 2024' },
+  { label: 'Updated', value: 'Jul 2026' },
+  { label: 'Powered by', value: 'Astro 7' },
+];
+---
+
+<style>
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(180,205,235,0.25);
+    font-family: var(--font-aldrich);
+    font-size: 12px;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--ua-text-muted-light); }
+  .stat-value { color: var(--ua-text-muted); }
+
+  .now-playing {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .np-label {
+    font-family: var(--font-aldrich);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--ua-text-muted-light);
+    text-transform: uppercase;
+  }
+  .np-title {
+    font-family: var(--font-source-code-pro);
+    font-size: 12px;
+    color: #5a9fd8;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .np-artist {
+    font-family: var(--font-aldrich);
+    font-size: 11px;
+    color: var(--ua-text-muted);
+  }
+  .np-eq {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 14px;
+  }
+  .np-bar {
+    width: 3px;
+    border-radius: 2px;
+    background: #6aabf0;
+    animation: eq-bounce 0.8s ease-in-out infinite alternate;
+  }
+  .np-bar:nth-child(2) { animation-delay: 0.15s; }
+  .np-bar:nth-child(3) { animation-delay: 0.3s; }
+  .np-bar:nth-child(4) { animation-delay: 0.1s; }
+  @keyframes eq-bounce {
+    from { height: 4px; }
+    to   { height: 14px; }
+  }
+
+  .button-gif-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 0 4px;
+  }
+  .site-button-img {
+    opacity: 0.75;
+    image-rendering: pixelated;
+    transition: opacity 0.2s;
+  }
+  .site-button-img:hover { opacity: 1; }
+</style>
+
+<!-- NOW PLAYING -->
+<div class="ua-panel" style="margin-top:16px;">
+  <div class="ua-toolbar">
+    <img src="/images/xbutton.png" alt="" class="ua-xbtn" />
+    <span class="ua-toolbar-title">NOW PLAYING</span>
+  </div>
+  <div style="padding:12px 14px;">
+    <div class="now-playing">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <div class="np-eq">
+          <div class="np-bar" style="height:8px;"></div>
+          <div class="np-bar" style="height:12px;"></div>
+          <div class="np-bar" style="height:6px;"></div>
+          <div class="np-bar" style="height:10px;"></div>
+        </div>
+        <span class="np-label">listening</span>
+      </div>
+      <span class="np-title">{nowPlaying.title}</span>
+      <span class="np-artist">{nowPlaying.artist}</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="ua-panel" style="margin-top:16px;">
+  <div class="ua-toolbar">
+    <img src="/images/xbutton.png" alt="" class="ua-xbtn" />
+    <span class="ua-toolbar-title">STATS</span>
+  </div>
+  <div style="padding:10px 14px;">
+    {stats.map(s => (
+      <div class="stat-row">
+        <span class="stat-label">{s.label}</span>
+        <span class="stat-value">{s.value}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<!-- SITE BUTTON -->
+<div class="ua-panel" style="margin-top:16px;">
+  <div class="ua-toolbar">
+    <img src="/images/xbutton.png" alt="" class="ua-xbtn" />
+    <span class="ua-toolbar-title">BUTTON</span>
+  </div>
+  <div class="button-gif-wrap">
+    <img src="/images/UnicodeAngelButton.gif" alt="site button" class="site-button-img" />
+    <span style="font-family:var(--font-aldrich);font-size:10px;color:var(--ua-text-muted-light);letter-spacing:1px;">
+      link back ↑
+    </span>
+  </div>
+</div>

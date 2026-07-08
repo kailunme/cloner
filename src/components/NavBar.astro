@@ -1,0 +1,153 @@
+---
+const navLinks = [
+  { label: 'HOME',     href: '/',      active: true },
+  { label: 'ABOUT',    href: '/about'  },
+  { label: 'PROJECTS', href: '/projects' },
+  { label: 'BLOG',     href: '/blog'   },
+  { label: 'LINKS',    href: '/links'  },
+];
+---
+
+<style>
+  .navbar-wrap {
+    background: var(--ua-panel-bg);
+    border: 1px solid var(--ua-panel-border);
+    border-radius: var(--ua-panel-radius);
+    box-shadow: var(--ua-panel-shadow);
+    overflow: hidden;
+  }
+
+  .navbar-header {
+    padding: 18px 16px 12px;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f4fa 100%);
+    border-bottom: 1px solid var(--ua-panel-border);
+    text-align: center;
+  }
+
+  .navbar-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a8d4ff, #6aabf0);
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    border: 2px solid rgba(100,170,240,0.4);
+    box-shadow: 0 2px 12px rgba(80,140,200,0.2);
+  }
+
+  .navbar-name {
+    font-family: var(--font-space-age);
+    font-size: 18px;
+    background: var(--ua-gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+  }
+
+  .navbar-handle {
+    font-family: var(--font-source-code-pro);
+    font-size: 11px;
+    color: var(--ua-text-muted);
+    letter-spacing: 1px;
+    margin-top: 3px;
+  }
+
+  .navbar-nav {
+    padding: 8px 0;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    font-family: var(--font-forced-square);
+    font-size: 13px;
+    color: var(--ua-text-muted);
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+    position: relative;
+  }
+
+  .nav-item::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ua-panel-border);
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+
+  .nav-item:hover {
+    color: #5a9fd8;
+    background: rgba(100,170,240,0.07);
+  }
+
+  .nav-item:hover::before { background: #6aabf0; }
+
+  .nav-item.active {
+    color: #4a8fd4;
+  }
+  .nav-item.active::before {
+    background: #6aabf0;
+    box-shadow: 0 0 6px rgba(100,170,240,0.5);
+  }
+
+  .navbar-footer {
+    padding: 10px 16px;
+    border-top: 1px solid var(--ua-panel-border);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .social-link {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    border: 1px solid var(--ua-panel-border);
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--ua-text-muted);
+    transition: border-color 0.15s, color 0.15s;
+    text-decoration: none;
+  }
+  .social-link:hover {
+    border-color: #6aabf0;
+    color: #4a8fd4;
+  }
+
+  #loadercircle { animation: rotate 2s linear infinite; }
+</style>
+
+<div class="navbar-wrap">
+  <div class="navbar-header">
+    <div class="navbar-avatar">
+      <img src="/images/loadercircle.png" id="loadercircle" alt="" width="36" height="36" style="opacity:0.7;image-rendering:crisp-edges;" />
+    </div>
+    <div class="navbar-name">KAI</div>
+    <div class="navbar-handle">@unicodeangel</div>
+  </div>
+
+  <nav class="navbar-nav">
+    {navLinks.map(link => (
+      <a href={link.href} class={`nav-item${link.active ? ' active' : ''}`}>
+        {link.label}
+      </a>
+    ))}
+  </nav>
+
+  <div class="navbar-footer">
+    <a href="https://github.com" target="_blank" class="social-link" title="GitHub">GH</a>
+    <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">TW</a>
+    <a href="mailto:hello@example.com" class="social-link" title="Email">@</a>
+  </div>
+</div>
