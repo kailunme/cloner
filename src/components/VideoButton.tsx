@@ -1,5 +1,17 @@
 import { useState } from 'react';
 
+const IconPlay = () => (
+  <svg width="8" height="9" viewBox="0 0 8 9" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 6 }}>
+    <polygon points="0,0 8,4.5 0,9" fill="currentColor" />
+  </svg>
+);
+
+const IconStop = () => (
+  <svg width="8" height="8" viewBox="0 0 8 8" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 6 }}>
+    <rect width="8" height="8" fill="currentColor" />
+  </svg>
+);
+
 export default function VideoButton() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [hovered, setHovered] = useState(false);
@@ -63,9 +75,12 @@ export default function VideoButton() {
           transform,
           outline: 'none',
           userSelect: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        {isPlaying ? '◼ BG OFF' : '▶ BG ON'}
+        {isPlaying ? <><IconStop />BG OFF</> : <><IconPlay />BG ON</>}
       </button>
     </div>
   );
