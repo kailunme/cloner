@@ -8,7 +8,7 @@ import ControlPanel from '../components/ControlPanel.astro';
 ---
 
 <Layout>
-  <div class="bg-video-container">
+  <div class="bg-video-container" transition:persist="bg-video">
     <video id="bg-video" autoplay muted loop playsinline class="bg-video">
       <source src="/videos/background.mp4" type="video/mp4" />
     </video>
