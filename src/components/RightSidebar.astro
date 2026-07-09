@@ -1,6 +1,7 @@
 ---
 import type { SidebarContent } from '../i18n/content';
 import { sidebar } from '../i18n/content';
+import IPodPlayer from './iPodPlayer';
 
 interface Props { content?: SidebarContent; }
 const { content = sidebar.en } = Astro.props;
@@ -20,52 +21,6 @@ const { content = sidebar.en } = Astro.props;
   .stat-label { color: var(--ua-text-muted-light); }
   .stat-value { color: var(--ua-text-muted); }
 
-  .now-playing {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .np-label {
-    font-family: var(--font-body);
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--ua-text-muted-light);
-    text-transform: uppercase;
-  }
-  .np-title {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: #5a9fd8;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .np-artist {
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--ua-text-muted);
-  }
-  .np-eq {
-    display: flex;
-    align-items: flex-end;
-    gap: 2px;
-    height: 14px;
-  }
-  .np-bar {
-    width: 3px;
-    border-radius: 2px;
-    background: #6aabf0;
-    animation: eq-bounce 0.8s ease-in-out infinite alternate;
-  }
-  .np-bar:nth-child(2) { animation-delay: 0.15s; }
-  .np-bar:nth-child(3) { animation-delay: 0.3s; }
-  .np-bar:nth-child(4) { animation-delay: 0.1s; }
-  @keyframes eq-bounce {
-    from { height: 4px; }
-    to   { height: 14px; }
-  }
-
   .button-gif-wrap {
     display: flex;
     flex-direction: column;
@@ -81,26 +36,14 @@ const { content = sidebar.en } = Astro.props;
   .site-button-img:hover { opacity: 1; }
 </style>
 
-<!-- NOW PLAYING -->
+<!-- NOW PLAYING (iPod nano) -->
 <div class="ua-panel fade-up" style="animation-delay:0.18s;">
   <div class="ua-toolbar">
     <img src="/images/xbutton.png" alt="" class="ua-xbtn" />
     <span class="ua-toolbar-title">NOW PLAYING</span>
   </div>
-  <div style="padding:12px 14px;">
-    <div class="now-playing">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-        <div class="np-eq">
-          <div class="np-bar" style="height:8px;"></div>
-          <div class="np-bar" style="height:12px;"></div>
-          <div class="np-bar" style="height:6px;"></div>
-          <div class="np-bar" style="height:10px;"></div>
-        </div>
-        <span class="np-label">{content.listeningLabel}</span>
-      </div>
-      <span class="np-title">{content.nowPlayingTitle}</span>
-      <span class="np-artist">{content.nowPlayingArtist}</span>
-    </div>
+  <div style="padding:14px 10px; display:flex; justify-content:center;">
+    <IPodPlayer title={content.nowPlayingTitle} artist={content.nowPlayingArtist} client:load />
   </div>
 </div>
 

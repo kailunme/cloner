@@ -48,14 +48,6 @@ const {
       } else {
         document.body.removeAttribute('data-lang');
       }
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        const href = btn.getAttribute('href') ?? '';
-        const match =
-          (locale === 'en' && (href === '/' || href === '')) ||
-          (locale === 'zh' && href.startsWith('/zh')) ||
-          (locale === 'ja' && href.startsWith('/ja'));
-        btn.classList.toggle('active', match);
-      });
       // Force np-title to re-inherit --font-body after cache restore
       document.querySelectorAll('.np-title').forEach(el => {
         (el as HTMLElement).style.fontFamily = '';
