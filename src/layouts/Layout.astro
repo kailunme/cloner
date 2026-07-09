@@ -56,6 +56,11 @@ const {
           (locale === 'ja' && href.startsWith('/ja'));
         btn.classList.toggle('active', match);
       });
+      // Force np-title to re-inherit --font-body after cache restore
+      document.querySelectorAll('.np-title').forEach(el => {
+        (el as HTMLElement).style.fontFamily = '';
+        (el as HTMLElement).style.fontFamily = 'var(--font-body)';
+      });
     }
     document.addEventListener('astro:after-swap', applyLang);
   </script>
