@@ -38,13 +38,24 @@ const {
   <script>
     function applyLang() {
       const path = window.location.pathname;
+      let locale = 'en';
       if (path.startsWith('/zh')) {
         document.body.setAttribute('data-lang', 'zh');
+        locale = 'zh';
       } else if (path.startsWith('/ja')) {
         document.body.setAttribute('data-lang', 'ja');
+        locale = 'ja';
       } else {
         document.body.removeAttribute('data-lang');
       }
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const href = btn.getAttribute('href') ?? '';
+        const match =
+          (locale === 'en' && (href === '/' || href === '')) ||
+          (locale === 'zh' && href.startsWith('/zh')) ||
+          (locale === 'ja' && href.startsWith('/ja'));
+        btn.classList.toggle('active', match);
+      });
     }
     document.addEventListener('astro:after-swap', applyLang);
   </script>
