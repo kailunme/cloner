@@ -156,9 +156,11 @@ a:hover { color: var(--ua-link-hover); }
 .ua-toolbar-title {
   color: var(--ua-toolbar-text);
   font-family: var(--font-sf-telegraphic);
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  line-height: 1;
+  padding-top: 3px;
 }
 
 .ua-xbtn {
@@ -181,7 +183,7 @@ a:hover { color: var(--ua-link-hover); }
 /* ===== SECTION HEADING ===== */
 .ua-section-label {
   font-family: var(--font-aldrich);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--ua-text-muted-light);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -259,7 +261,7 @@ a:hover { color: var(--ua-link-hover); }
   background: rgba(160,200,245,0.12);
   color: #6a9fd8;
   font-family: var(--font-aldrich);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1px;
 }
 
