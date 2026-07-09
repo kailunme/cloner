@@ -4,8 +4,7 @@ import NavBar from '../components/NavBar.astro';
 import MainContent from '../components/MainContent.astro';
 import UpdatesWindow from '../components/UpdatesWindow.astro';
 import RightSidebar from '../components/RightSidebar.astro';
-import VideoButton from '../components/VideoButton';
-import LangSwitcher from '../components/LangSwitcher.astro';
+import ControlPanel from '../components/ControlPanel.astro';
 ---
 
 <Layout>
@@ -19,8 +18,7 @@ import LangSwitcher from '../components/LangSwitcher.astro';
     <!-- LEFT -->
     <div class="col-left">
       <NavBar />
-      <LangSwitcher current="en" />
-      <VideoButton client:load />
+      <ControlPanel current="en" />
     </div>
 
     <!-- MIDDLE -->

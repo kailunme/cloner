@@ -4,8 +4,7 @@ import NavBar from '../../components/NavBar.astro';
 import MainContent from '../../components/MainContent.astro';
 import UpdatesWindow from '../../components/UpdatesWindow.astro';
 import RightSidebar from '../../components/RightSidebar.astro';
-import VideoButton from '../../components/VideoButton';
-import LangSwitcher from '../../components/LangSwitcher.astro';
+import ControlPanel from '../../components/ControlPanel.astro';
 import { nav, main, updates, sidebar } from '../../i18n/content';
 ---
 
@@ -19,8 +18,7 @@ import { nav, main, updates, sidebar } from '../../i18n/content';
   <div class="site-grid">
     <div class="col-left">
       <NavBar content={nav.zh} />
-      <LangSwitcher current="zh" />
-      <VideoButton client:load />
+      <ControlPanel current="zh" />
     </div>
     <div class="col-mid">
       <MainContent content={main.zh} />

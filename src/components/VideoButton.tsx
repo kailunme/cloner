@@ -36,7 +36,7 @@ export default function VideoButton() {
   let transform = 'translateY(0)';
   let borderColor = 'var(--ua-panel-border)';
 
-  if (pressed) {
+  if (pressed || !isPlaying) {
     bg = 'linear-gradient(180deg,#dce8f5,#e8f0fa)';
     shadow = 'inset 0 2px 5px rgba(100,150,210,0.35), inset 0 1px 2px rgba(80,130,190,0.2)';
     color = '#4a8fd4';
@@ -80,7 +80,7 @@ export default function VideoButton() {
           justifyContent: 'center',
         }}
       >
-        {isPlaying ? <><IconStop />BG OFF</> : <><IconPlay />BG ON</>}
+        {isPlaying ? <><IconPlay />BG ON</> : <><IconStop />BG OFF</>}
       </button>
     </div>
   );
