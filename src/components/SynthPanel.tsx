@@ -178,7 +178,7 @@ export default function SynthPanel({ current }: Props) {
               userSelect: 'none',
             }}
           >
-            ⏻
+            {'⏻︎'}
           </button>
           <span style={{
             fontFamily: 'var(--font-forced-square)',

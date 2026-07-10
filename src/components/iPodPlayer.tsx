@@ -217,15 +217,15 @@ export default function iPodPlayer({ title }: Props) {
               <span style={{
                 position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)',
                 fontSize: 10, color: '#8aa8c8', pointerEvents: 'none', userSelect: 'none',
-              }}>⏮</span>
+              }}>⏮{'︎'}</span>
               <span style={{
                 position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)',
                 fontSize: 10, color: '#8aa8c8', pointerEvents: 'none', userSelect: 'none',
-              }}>⏭</span>
+              }}>⏭{'︎'}</span>
               <span style={{
                 position: 'absolute', bottom: 7, left: '50%', transform: 'translateX(-50%)',
                 fontSize: 9, color: '#8aa8c8', pointerEvents: 'none', userSelect: 'none',
-              }}>▶</span>
+              }}>▶{'︎'}</span>
 
               {/* center button */}
               <button
