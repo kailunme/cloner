@@ -215,13 +215,13 @@ export default function iPodPlayer({ title }: Props) {
                 letterSpacing: 1.5, pointerEvents: 'none', userSelect: 'none' as const,
               }}>MENU</span>
               <span style={{ position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', lineHeight: 1 }}>
-                <svg width="11" height="10" viewBox="0 0 11 10" fill="#8aa8c8"><rect x="0" y="0" width="2" height="10"/><polygon points="3,5 10,0 10,10"/></svg>
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="#8aa8c8"><rect x="0" y="0" width="2" height="10"/><polygon points="8,0 8,10 3,5"/><polygon points="13,0 13,10 8,5"/></svg>
               </span>
               <span style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', lineHeight: 1 }}>
-                <svg width="11" height="10" viewBox="0 0 11 10" fill="#8aa8c8"><polygon points="0,0 7,5 0,10"/><rect x="9" y="0" width="2" height="10"/></svg>
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="#8aa8c8"><polygon points="1,0 1,10 6,5"/><polygon points="6,0 6,10 11,5"/><rect x="12" y="0" width="2" height="10"/></svg>
               </span>
               <span style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)', pointerEvents: 'none', lineHeight: 1 }}>
-                <svg width="9" height="9" viewBox="0 0 9 9" fill="#8aa8c8"><polygon points="0,0 9,4.5 0,9"/></svg>
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="#8aa8c8"><polygon points="0,0 0,10 9,5"/></svg>
               </span>
 
               {/* center button */}
