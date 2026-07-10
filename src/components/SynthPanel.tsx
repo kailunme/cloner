@@ -178,7 +178,10 @@ export default function SynthPanel({ current }: Props) {
               userSelect: 'none',
             }}
           >
-            {'⏻︎'}
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              <path d="M4.5 2.8A5.5 5.5 0 1 0 10.5 2.8"/>
+              <line x1="7.5" y1="0.5" x2="7.5" y2="6"/>
+            </svg>
           </button>
           <span style={{
             fontFamily: 'var(--font-forced-square)',
