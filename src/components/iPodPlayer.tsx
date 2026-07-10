@@ -221,7 +221,7 @@ export default function iPodPlayer({ title }: Props) {
                 <svg width="12" height="7" viewBox="0 0 12 7" fill="#8aa8c8"><polygon points="1,0 1,7 5,3.5"/><polygon points="5.5,0 5.5,7 9.5,3.5"/><rect x="10.5" y="0" width="1.5" height="7"/></svg>
               </span>
               <span style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)', pointerEvents: 'none', lineHeight: 1 }}>
-                <svg width="18" height="8" viewBox="0 0 18 8" fill="#8aa8c8"><polygon points="0,0 0,8 6,4"/><rect x="8" y="0" width="2.5" height="8"/><rect x="12.5" y="0" width="2.5" height="8"/></svg>
+                <svg width="15" height="7" viewBox="0 0 15 7" fill="#8aa8c8"><polygon points="0,0 0,7 5,3.5"/><rect x="7" y="0" width="2" height="7"/><rect x="11" y="0" width="2" height="7"/></svg>
               </span>
 
               {/* center button */}
