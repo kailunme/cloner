@@ -13,16 +13,26 @@ const { content = sidebar.en } = Astro.props;
     justify-content: space-between;
     align-items: center;
     padding: 7px 0;
-    border-bottom: 1px solid rgba(180,205,235,0.3);
+    border-bottom: 1px dashed rgba(180,205,235,0.5);
     font-family: var(--font-body);
     font-size: 13px;
   }
   .stat-row:last-child { border-bottom: none; }
   .stat-label { color: var(--ua-text-muted-light); }
   .stat-value {
-    color: var(--ua-text-muted);
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: 11px;
+    color: #8aafc8;
+    background: linear-gradient(180deg, #2a3a4a 0%, #1e2d3c 100%);
+    border: 1px solid #1a2a38;
+    border-radius: 5px;
+    padding: 2px 8px;
+    box-shadow:
+      inset 0 1px 3px rgba(0,0,0,0.35),
+      inset 0 0 6px rgba(0,10,20,0.2),
+      0 1px 0 rgba(255,255,255,0.12);
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 6px rgba(106,171,240,0.4);
   }
 
   .button-gif-wrap {
