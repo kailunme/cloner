@@ -17,8 +17,9 @@ const { content = nav.en } = Astro.props;
 
   .navbar-header {
     padding: 18px 16px 12px;
-    background: linear-gradient(180deg, #ffffff 0%, #f0f4fa 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #edf1f7 100%);
     border-bottom: 1px solid var(--ua-panel-border);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
     text-align: center;
   }
 
@@ -56,9 +57,7 @@ const { content = nav.en } = Astro.props;
 
   .navbar-nav {
     padding: 8px 0;
-    background: rgba(180, 210, 240, 0.06);
-    border-top: 1px solid rgba(180,205,235,0.4);
-    border-bottom: 1px solid rgba(180,205,235,0.4);
+    background: var(--ua-panel-bg);
   }
 
   .nav-item {
@@ -101,7 +100,9 @@ const { content = nav.en } = Astro.props;
 
   .navbar-footer {
     padding: 10px 16px;
+    background: linear-gradient(180deg, #edf1f7 0%, #ffffff 100%);
     border-top: 1px solid var(--ua-panel-border);
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.8) inset;
     display: flex;
     gap: 10px;
     justify-content: center;
