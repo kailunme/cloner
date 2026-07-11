@@ -77,7 +77,7 @@ export default function iPodPlayer({ title }: Props) {
             padding: '8px 10px 6px',
             border: '1px solid #c4ceda',
             boxShadow: 'inset 0 0 8px rgba(180,200,230,0.25), 0 1px 3px rgba(100,130,180,0.08)',
-            marginBottom: 10,
+            marginBottom: 16,
           }}>
             {/* top row: EQ + label */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
