@@ -145,12 +145,11 @@ export default function SynthPanel({ current }: Props) {
           {/* spacer matching LED dot row */}
           <div style={{ width: 5, height: 5 }} />
           <button
-            onClick={handleBg}
             onMouseDown={() => setPressed(true)}
-            onMouseUp={() => setPressed(false)}
+            onMouseUp={() => { setPressed(false); handleBg(); }}
             onMouseLeave={() => setPressed(false)}
-            onTouchStart={() => setPressed(true)}
-            onTouchEnd={() => { setPressed(false); handleBg(); }}
+            onTouchStart={(e) => { e.preventDefault(); setPressed(true); }}
+            onTouchEnd={(e) => { e.preventDefault(); setPressed(false); handleBg(); }}
             style={{
               width: 36,
               height: 36,

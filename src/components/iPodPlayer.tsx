@@ -181,31 +181,28 @@ export default function iPodPlayer({ title }: Props) {
                 aria-label="previous"
                 style={{ ...zoneBase, clipPath: 'polygon(0% 20%, 0% 80%, 50% 50%)', ...(pressedZone === 'prev' ? zonePressed : {}) }}
                 onMouseDown={() => setPressedZone('prev')}
-                onMouseUp={() => setPressedZone(null)}
+                onMouseUp={() => { setPressedZone(null); handlePrev(); }}
                 onMouseLeave={() => setPressedZone(null)}
-                onTouchStart={() => setPressedZone('prev')}
-                onTouchEnd={() => { setPressedZone(null); handlePrev(); }}
-                onClick={handlePrev}
+                onTouchStart={(e) => { e.preventDefault(); setPressedZone('prev'); }}
+                onTouchEnd={(e) => { e.preventDefault(); setPressedZone(null); handlePrev(); }}
               />
               <button
                 aria-label="next"
                 style={{ ...zoneBase, clipPath: 'polygon(100% 20%, 100% 80%, 50% 50%)', ...(pressedZone === 'next' ? zonePressed : {}) }}
                 onMouseDown={() => setPressedZone('next')}
-                onMouseUp={() => setPressedZone(null)}
+                onMouseUp={() => { setPressedZone(null); handleNext(); }}
                 onMouseLeave={() => setPressedZone(null)}
-                onTouchStart={() => setPressedZone('next')}
-                onTouchEnd={() => { setPressedZone(null); handleNext(); }}
-                onClick={handleNext}
+                onTouchStart={(e) => { e.preventDefault(); setPressedZone('next'); }}
+                onTouchEnd={(e) => { e.preventDefault(); setPressedZone(null); handleNext(); }}
               />
               <button
                 aria-label="play/pause"
                 style={{ ...zoneBase, clipPath: 'polygon(20% 100%, 80% 100%, 50% 50%)', ...(pressedZone === 'bottom' ? zonePressed : {}) }}
                 onMouseDown={() => setPressedZone('bottom' as Zone)}
-                onMouseUp={() => setPressedZone(null)}
+                onMouseUp={() => { setPressedZone(null); handlePlay(); }}
                 onMouseLeave={() => setPressedZone(null)}
-                onTouchStart={() => setPressedZone('bottom' as Zone)}
-                onTouchEnd={() => { setPressedZone(null); handlePlay(); }}
-                onClick={handlePlay}
+                onTouchStart={(e) => { e.preventDefault(); setPressedZone('bottom' as Zone); }}
+                onTouchEnd={(e) => { e.preventDefault(); setPressedZone(null); handlePlay(); }}
               />
 
               {/* labels */}
@@ -227,12 +224,11 @@ export default function iPodPlayer({ title }: Props) {
               {/* center button */}
               <button
                 aria-label="play/pause"
-                onClick={handlePlay}
                 onMouseDown={() => setPressedZone('center')}
-                onMouseUp={() => setPressedZone(null)}
+                onMouseUp={() => { setPressedZone(null); handlePlay(); }}
                 onMouseLeave={() => setPressedZone(null)}
-                onTouchStart={() => setPressedZone('center')}
-                onTouchEnd={() => { setPressedZone(null); handlePlay(); }}
+                onTouchStart={(e) => { e.preventDefault(); setPressedZone('center'); }}
+                onTouchEnd={(e) => { e.preventDefault(); setPressedZone(null); handlePlay(); }}
                 style={{
                   position: 'absolute',
                   top: '50%', left: '50%',
