@@ -91,35 +91,30 @@ const { projects, skills } = content;
   .project-card {
     padding: 12px 14px 13px;
     border-radius: 14px;
-    border: 1px solid #c2d4e6;
-    background: linear-gradient(160deg, #f6fafd 0%, #eaf2f9 60%, #f0f6fc 100%);
+    border: 1px solid rgba(190,210,230,0.6);
+    background: linear-gradient(160deg, rgba(255,255,255,0.7) 0%, rgba(240,247,254,0.5) 100%);
     box-shadow:
-      0 2px 8px rgba(100,140,190,0.13),
-      0 1px 2px rgba(100,140,190,0.08),
-      inset 0 1px 2px rgba(255,255,255,0.95),
-      inset 0 -1px 2px rgba(160,200,235,0.15);
-    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      0 1px 4px rgba(100,140,190,0.07),
+      inset 0 1px 2px rgba(255,255,255,0.9);
+    transition: border-color 0.2s, box-shadow 0.2s;
     position: relative;
   }
   .project-card:hover {
-    border-color: rgba(100,160,220,0.6);
-    background: linear-gradient(160deg, #f0f7ff 0%, #e4eff8 60%, #eaf4fd 100%);
+    border-color: rgba(140,180,220,0.6);
     box-shadow:
-      0 4px 18px rgba(80,140,200,0.18),
-      0 1px 4px rgba(100,140,190,0.1),
-      inset 0 1px 2px rgba(255,255,255,0.95),
-      inset 0 -1px 2px rgba(160,200,235,0.2);
+      0 3px 12px rgba(80,140,200,0.1),
+      inset 0 1px 2px rgba(255,255,255,0.9);
   }
   .project-card + .project-card { margin-top: 10px; }
 
   .project-name {
     font-family: var(--font-body);
     font-size: 14px;
-    color: #4a8fd4;
+    color: #6a9fd8;
     font-weight: 600;
     text-decoration: none;
   }
-  .project-name:hover { color: #3a7fc4; text-decoration: underline; }
+  .project-name:hover { color: #4a8fd4; text-decoration: underline; }
 
   .project-desc {
     font-family: var(--font-body);
@@ -138,10 +133,10 @@ const { projects, skills } = content;
   .project-star {
     font-family: var(--font-body);
     font-size: 11px;
-    color: var(--ua-text-muted-light);
+    color: #bcc7d4;
     margin-left: auto;
-    background: linear-gradient(180deg, #f0f5fa, #e6eff7);
-    border: 1px solid #ccd8e8;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(190,210,230,0.6);
     border-radius: 8px;
     padding: 1px 7px;
     box-shadow: inset 0 1px 1px rgba(255,255,255,0.8);
@@ -151,13 +146,13 @@ const { projects, skills } = content;
     display: inline-block;
     padding: 2px 8px;
     border-radius: 20px;
-    border: 1px solid #b8cfe4;
-    background: linear-gradient(180deg, #eaf3fc, #deedf8);
-    color: #5a8fc8;
+    border: 1px solid rgba(180,210,235,0.6);
+    background: rgba(255,255,255,0.5);
+    color: #8ab4d4;
     font-family: var(--font-body);
     font-size: 11px;
     letter-spacing: 0.5px;
-    box-shadow: inset 0 1px 1px rgba(255,255,255,0.8), 0 1px 2px rgba(100,150,200,0.08);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.8);
   }
 
   .skill-row {
