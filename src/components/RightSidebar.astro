@@ -12,14 +12,30 @@ const { content = sidebar.en } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0;
-    border-bottom: 1px solid rgba(180,205,235,0.25);
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: linear-gradient(160deg, #eef3f9 0%, #e6eef6 100%);
+    border: 1px solid #c0d0e2;
+    box-shadow:
+      inset 0 1px 3px rgba(100,140,190,0.18),
+      inset 0 0 1px rgba(100,140,190,0.1),
+      0 1px 0 rgba(255,255,255,0.85);
     font-family: var(--font-body);
     font-size: 13px;
+    margin-bottom: 6px;
   }
-  .stat-row:last-child { border-bottom: none; }
+  .stat-row:last-child { margin-bottom: 0; }
   .stat-label { color: var(--ua-text-muted-light); }
-  .stat-value { color: var(--ua-text-muted); }
+  .stat-value {
+    color: var(--ua-text-muted);
+    font-family: var(--font-source-code-pro);
+    font-size: 12px;
+    background: linear-gradient(180deg, #f4f8fc, #eaf2f8);
+    border: 1px solid #c8d8e8;
+    border-radius: 5px;
+    padding: 1px 6px;
+    box-shadow: inset 0 1px 2px rgba(100,140,190,0.15), 0 1px 0 rgba(255,255,255,0.9);
+  }
 
   .button-gif-wrap {
     display: flex;
@@ -32,6 +48,8 @@ const { content = sidebar.en } = Astro.props;
     opacity: 0.75;
     image-rendering: pixelated;
     transition: opacity 0.2s;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(100,140,190,0.18), 0 1px 2px rgba(100,140,190,0.1);
   }
   .site-button-img:hover { opacity: 1; }
 </style>

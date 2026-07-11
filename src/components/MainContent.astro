@@ -12,7 +12,11 @@ const { projects, skills } = content;
     background: var(--ua-panel-bg);
     border: 1px solid var(--ua-panel-border);
     border-radius: var(--ua-panel-radius);
-    box-shadow: var(--ua-panel-shadow);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.75) inset,
+      0 -1px 0 0 rgba(140,170,210,0.2) inset,
+      0 6px 32px rgba(100,130,180,0.15),
+      0 2px 8px rgba(100,130,180,0.1);
     overflow: hidden;
   }
 
@@ -23,8 +27,9 @@ const { projects, skills } = content;
     align-items: center;
     justify-content: space-between;
     padding: 9px 16px;
-    background: linear-gradient(180deg, #ffffff 0%, var(--ua-toolbar-bg) 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #edf1f7 100%);
     border-bottom: 1px solid var(--ua-panel-border);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 1px 3px rgba(140,170,210,0.1);
   }
 
   .mc-title {
@@ -69,7 +74,8 @@ const { projects, skills } = content;
   .mc-sep {
     display: block;
     height: 1px;
-    background: var(--ua-separator);
+    background: linear-gradient(90deg, transparent 0%, rgba(140,170,210,0.35) 20%, rgba(140,170,210,0.35) 80%, transparent 100%);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
     margin: 14px 0;
   }
 
@@ -83,55 +89,75 @@ const { projects, skills } = content;
   }
 
   .project-card {
-    padding: 11px 14px;
-    border-radius: 12px;
-    border: 1px solid rgba(180,205,235,0.5);
-    background: rgba(255,255,255,0.55);
-    transition: border-color 0.2s, box-shadow 0.2s;
+    padding: 12px 14px 13px;
+    border-radius: 14px;
+    border: 1px solid #c2d4e6;
+    background: linear-gradient(160deg, #f6fafd 0%, #eaf2f9 60%, #f0f6fc 100%);
+    box-shadow:
+      0 2px 8px rgba(100,140,190,0.13),
+      0 1px 2px rgba(100,140,190,0.08),
+      inset 0 1px 2px rgba(255,255,255,0.95),
+      inset 0 -1px 2px rgba(160,200,235,0.15);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative;
   }
   .project-card:hover {
-    border-color: rgba(100,160,220,0.5);
-    box-shadow: 0 4px 16px rgba(80,140,200,0.1);
+    border-color: rgba(100,160,220,0.6);
+    background: linear-gradient(160deg, #f0f7ff 0%, #e4eff8 60%, #eaf4fd 100%);
+    box-shadow:
+      0 4px 18px rgba(80,140,200,0.18),
+      0 1px 4px rgba(100,140,190,0.1),
+      inset 0 1px 2px rgba(255,255,255,0.95),
+      inset 0 -1px 2px rgba(160,200,235,0.2);
   }
-  .project-card + .project-card { margin-top: 8px; }
+  .project-card + .project-card { margin-top: 10px; }
 
   .project-name {
     font-family: var(--font-body);
     font-size: 14px;
     color: #4a8fd4;
     font-weight: 600;
+    text-decoration: none;
   }
+  .project-name:hover { color: #3a7fc4; text-decoration: underline; }
+
   .project-desc {
     font-family: var(--font-body);
     font-size: 13px;
     color: var(--ua-text-muted);
-    margin-top: 3px;
-    line-height: 1.5;
+    margin-top: 4px;
+    line-height: 1.55;
   }
   .project-meta {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 6px;
+    margin-top: 9px;
     flex-wrap: wrap;
   }
   .project-star {
     font-family: var(--font-source-code-pro);
-    font-size: 12px;
+    font-size: 11px;
     color: var(--ua-text-muted-light);
     margin-left: auto;
+    background: linear-gradient(180deg, #f0f5fa, #e6eff7);
+    border: 1px solid #ccd8e8;
+    border-radius: 8px;
+    padding: 1px 7px;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.8);
   }
 
   .ua-tag {
     display: inline-block;
-    padding: 2px 7px;
+    padding: 2px 8px;
     border-radius: 20px;
-    border: 1px solid rgba(100,160,220,0.3);
-    background: rgba(160,200,245,0.1);
-    color: #6a9fd8;
+    border: 1px solid #b8cfe4;
+    background: linear-gradient(180deg, #eaf3fc, #deedf8);
+    color: #5a8fc8;
     font-family: var(--font-body);
     font-size: 11px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.8), 0 1px 2px rgba(100,150,200,0.08);
   }
 
   .skill-row {
@@ -149,15 +175,18 @@ const { projects, skills } = content;
   }
   .skill-track {
     flex: 1;
-    height: 4px;
-    border-radius: 4px;
-    background: rgba(180,210,240,0.3);
+    height: 5px;
+    border-radius: 5px;
+    background: rgba(140,170,210,0.18);
+    border: 1px solid rgba(140,170,210,0.25);
+    box-shadow: inset 0 1px 3px rgba(100,140,190,0.22), inset 0 0 1px rgba(100,140,190,0.15);
     overflow: hidden;
   }
   .skill-fill {
     height: 100%;
-    border-radius: 4px;
+    border-radius: 5px;
     background: linear-gradient(90deg, #6aabf0, #a8d4ff);
+    box-shadow: 0 0 6px rgba(106,171,240,0.5);
   }
   .skill-pct {
     font-family: var(--font-source-code-pro);
