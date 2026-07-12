@@ -114,7 +114,7 @@ export default function SynthPanel({ current }: Props) {
                     position: 'absolute',
                     left: 2,
                     right: 2,
-                    top: active ? 2 : 16,
+                    top: active ? 2 : 12,
                     height: 16,
                     borderRadius: 5,
                     background: active
