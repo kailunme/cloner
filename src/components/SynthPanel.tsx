@@ -146,8 +146,8 @@ export default function SynthPanel({ current }: Props) {
           height: 36,
           background: 'rgba(160,185,215,0.4)',
           marginTop: 11,
-          marginLeft: 10,
-          marginRight: 10,
+          marginLeft: 6,
+          marginRight: 14,
           alignSelf: 'flex-start',
         }} />
 
