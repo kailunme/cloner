@@ -62,7 +62,7 @@ export default function SynthPanel({ current }: Props) {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'flex-start',
-        gap: 18,
+        gap: 4,
       }}>
         {LANGS.map(l => {
           const active = l.code === activeCode;
@@ -75,6 +75,7 @@ export default function SynthPanel({ current }: Props) {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: 6,
+                width: 36,
                 background: 'none',
                 border: 'none',
                 cursor: active ? 'default' : 'pointer',
