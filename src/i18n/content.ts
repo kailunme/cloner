@@ -57,7 +57,7 @@ export const nav: Record<Locale, NavContent> = {
     ],
   },
   zh: {
-    handle: '@kailun',
+    handle: '@kailun.me',
     links: [
       { label: 'HOME',     href: '/zh/',        active: true },
       { label: 'ABOUT',    href: '/zh/about' },
@@ -67,7 +67,7 @@ export const nav: Record<Locale, NavContent> = {
     ],
   },
   ja: {
-    handle: '@kailun',
+    handle: '@kailun.me',
     links: [
       { label: 'HOME',     href: '/ja/',        active: true },
       { label: 'ABOUT',    href: '/ja/about' },
