@@ -114,7 +114,8 @@ export default function SynthPanel({ current }: Props) {
                     position: 'absolute',
                     left: 2,
                     right: 2,
-                    top: 2,
+                    top: active ? 2 : 'auto',
+                    bottom: active ? 'auto' : 2,
                     height: 16,
                     borderRadius: 5,
                     background: active
@@ -123,8 +124,7 @@ export default function SynthPanel({ current }: Props) {
                     boxShadow: active
                       ? '0 0 6px rgba(106,171,240,0.7), inset 0 1px 2px rgba(255,255,255,0.6)'
                       : 'inset 0 1px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(100,140,180,0.15)',
-                    transform: active ? 'translateY(0)' : 'translateY(16px)',
-                    transition: 'transform 0.22s cubic-bezier(0.4,0,0.2,1), background 0.2s, box-shadow 0.2s',
+                    transition: 'background 0.2s, box-shadow 0.2s',
                   }} />
                 </div>
               </button>
