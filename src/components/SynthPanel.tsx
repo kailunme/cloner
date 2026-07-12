@@ -132,7 +132,7 @@ export default function SynthPanel({ current }: Props) {
               <span style={{
                 fontFamily: "'Zpix', monospace",
                 fontSize: 12,
-                letterSpacing: 1,
+                letterSpacing: 0,
                 color: active ? '#5a9fd8' : '#8b939c',
                 transition: 'color 0.15s',
                 whiteSpace: 'nowrap',
@@ -197,7 +197,7 @@ export default function SynthPanel({ current }: Props) {
           <span style={{
             fontFamily: "'Zpix', monospace",
             fontSize: 12,
-            letterSpacing: 2,
+            letterSpacing: 0,
             color: isPlaying ? '#5a9fd8' : '#8b939c',
             transition: 'color 0.15s',
             display: 'block',
