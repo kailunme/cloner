@@ -149,8 +149,9 @@ a:hover { color: var(--ua-link-hover); }
   }
   .col-left  { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; gap: 12px; }
   .col-mid   { grid-column: 1; grid-row: 2; }
-  .col-right { grid-column: 1; grid-row: 3; display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+  .col-right { grid-column: 1; grid-row: 3; display: flex; flex-direction: column; gap: 12px; }
   .col-right .ua-panel + .ua-panel { margin-top: 0; }
+  .mc-panel + .mc-panel { margin-top: 12px; }
 }
 
 /* ===== PANEL ===== */
