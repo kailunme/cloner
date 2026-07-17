@@ -42,8 +42,7 @@ public/
 
 ## Key Patterns
 - **Static vs. interactive:** Most components are `.astro` files. Only components needing
-  client-side interactivity are `.tsx` React Islands: `iPodPlayer`, `SynthPanel`,
-  `ButtonWindow`, `VideoButton`.
+  client-side interactivity are `.tsx` React Islands: `iPodPlayer`, `SynthPanel`.
 - **i18n:** All user-facing strings live in `src/i18n/content.ts`. Each locale page imports
   and passes the relevant content to components via props — no runtime locale detection.
 - **Locale pages:** The three `index.astro` files share the same component tree;
